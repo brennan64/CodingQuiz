@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+button<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,19 +16,22 @@
             Try to answer the following code-related questions within the time limit. Incorrect answers will subtract 5 seconds from the clock. You have
             10 seconds for each question.
           </p>
+          <div class="timer"></div>
         </div>
   
         <!-- Button Area -->
         
         <div class="button-area">
-            <h2 id="a" data-is-true=" "   class="answers" ></h2>
-            <h2 id="b" data-is-true= "false"   class="answers" ></h2>
-            <h2 id="c" data-is-true= false  class="answers"></h2>
+            <button  class="choice" id="a" data-is-true=" "   class="answers" ></button>
+            <button  class="choice" id="b" data-is-true= ""   class="answers" ></button>
+            <button class="choice"  id="c" data-is-true= ""  class="answers"></button>
           <button id="start-quiz">Start Quiz</button>
         </div>
   
         <!-- Result Area -->
-        <div class="result-area"></div>
+        <div class="result-area">
+
+        </div>
       </main>
       <script type="text/javascript" src="questionSet.JS"></script>
       <script type="text/javascript" src="assets/script.js"></script>

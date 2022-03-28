@@ -11,7 +11,7 @@ main {
 }
 
 .show {
-    display: block;
+    display: inline;
 }
 
 
@@ -20,12 +20,12 @@ main {
     flex-direction: column;
     background-color: palegreen;
     border-radius: 1em;
-    margin-top: 5%;
+    margin: 3%;
+    padding: 3%;
    
-    justify-content: center;
  
 }
-.button-area h2 {
+.button-area button {
     background-color: slategrey;
     border-radius: .5em;
     text-align: center;
@@ -44,10 +44,17 @@ main {
     background-image: linear-gradient(slategrey,white);
     border-radius: 1em;
     text-align: center;
+    padding-top: 1%;
 }
 
 
 .sub-heading-class {
     font-size: 64%;
     line-height: 1.2;
+}
+
+button {
+    justify-content: space-between;
+    margin-top: 4%;
+    font-size: 40pt;
 }
