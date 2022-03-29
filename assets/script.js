@@ -2,7 +2,7 @@ var a = document.querySelector("#a");
 var b = document.querySelector("#b");
 var c = document.querySelector("#c");
 var q = document.querySelector("h1");
-var choice = document.querySelectorAll("choice");
+
 var subQ = document.querySelector(".sub-heading-text");
 var buttonArea = document.querySelector("button-area");
 var n = 0;
@@ -38,9 +38,6 @@ function quizHandlerStart() {
     }
   }, 1000);
   getQuestion();
-  if (gameOver == "true") {
-    return;
-  }
 }
 
 function getQuestion() {
@@ -67,7 +64,7 @@ function getQuestion() {
     c.setAttribute("data-is-correct", "false");
   }
 
-  startButton.parentNode.removeChild(startButton);
+  startButton.setAttribute("class", "hidden");
 }
 
 document.addEventListener("click", function (e) {
@@ -90,18 +87,17 @@ document.addEventListener("click", function (e) {
 });
 
 function addEndBtn() {
-  resultButton.setAttribute("class", "show");
+  a.textContent = "";
+  b.textContent = "";
+  c.textContent = "";
+  resultButton.classList.remove("hidden");
   resultButton.addEventListener("click", function () {
     console.log("view results screen");
   });
 
-  var initialInput = document.getElementById("initialsInput");
-  initialInput.setAttribute("class", "show");
-}
+  var initialInput = document.getElementById("initials");
 
-if (gameOver == "true") {
-  buttonArea.querySelectorAll("button").setAttribute("class", "hidden");
-  losses++;
+  initialInput.setAttribute("class", "show");
 }
 
 // function scoreboard () {
