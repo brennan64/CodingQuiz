@@ -1,13 +1,14 @@
 main {
-   
+   display: flex;
+   flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
    
 
 }
 
 .hidden {
     display: none;
+    visibility: hidden;
 }
 
 .show {
@@ -15,22 +16,33 @@ main {
 }
 
 
-.button-area {
+#button-area {
     display: flex;
     flex-direction: column;
-    background-color: palegreen;
+    background-color: white;
+    border: 10% soild navy;
+    
     border-radius: 1em;
     margin: 3%;
     padding: 3%;
    
  
 }
-.button-area button {
+#button-area button {
     background-color: slategrey;
     border-radius: .5em;
     text-align: center;
   
     
+}
+.result-area {
+    display: flex;
+    justify-content: center;
+}
+
+.result-area button {
+    border-radius: 1em;
+    margin:auto;
 }
 
 #start-quiz {

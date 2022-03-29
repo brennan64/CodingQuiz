@@ -4,19 +4,22 @@ var c = document.querySelector('#c');
 var q = document.querySelector('h1');
 var choice = document.querySelectorAll ('choice');
 var subQ = document.querySelector('.sub-heading-text');
-var answers = document.querySelector("button-area");
+var buttonArea = document.querySelector("button-area");
 var n = 0;
 var startButton = document.querySelector('#start-quiz');
 var timeLeft = 50;
-var correctList = [1, 2, 1, 1,2];
+var resultButton = document.getElementById('result-btn')
 var timerEl = document.querySelector(".timer")
 var score = 0;
-var game = 
-startButton.addEventListener('click', quizHandlerStart);
-function timerStart () {
-    intID();
-    quizHandlerStart();
-}
+var gameOver = 'false';
+var wins = 0;
+var losses = 0;
+var game = startButton.addEventListener('click', quizHandlerStart);
+
+
+
+
+
 function quizHandlerStart () {
 
     getQuestion();
@@ -52,7 +55,7 @@ function getQuestion () {
             c.setAttribute("data-is-correct", "false");
         }
      
-        startButton.remove();
+        startButton.setAttribute("class", "hidden");
 
      
 
@@ -60,17 +63,22 @@ function getQuestion () {
 
     document.addEventListener ("click", function (e) {
         if(e.target.matches(".choice")){
-            console.log(e.target);
 
-            if (e.target.dataset.isCorrect === "true") {
+            if (e.target.dataset.isCorrect === "true" && n < 4) {
                 score +=1;
                 n++;
-                getQuestion();
-                if (score == 5){
-                    console.log('you win');
-                }
+                 getQuestion();
+                // if (score === 5 && e.target.dataset.isCorrect === "true"){
+                //     gameOver = "true"
+                //     addEndBtn();
+                // } else if 
 
-            } else {
+            }
+            else if (e.target.dataset.isCorrect === "true" && n ==4) {
+                gameOver = "true";
+                addEndBtn();
+            }
+            else {
                 timeLeft -=5;
     
             }
@@ -93,38 +101,23 @@ function getQuestion () {
           timerEl.textContent = '0';
           // Use `clearInterval()` to stop the timer
           clearInterval(intID);
-          // Call the `displayMessage()` function
-          displayMessage();
+         gameOver = "true";
+          console.log("times up")
         }
       }, 1000);
     
   
-function displayMessage () {
-
+function addEndBtn () {
+    resultButton.setAttribute("class","show");
+    document.querySelectorAll('.choice').setAttribute("class", "hidden");
 }
 
+// function scoreboard () {
+  
 
-    // function answerCheck () {
+// }
 
-    // }
-    // function secondQ () {
-       
-    //    n+=1;
-       
-    //    q.innerText = questionSet[n].question;
-    //     subQ.innerText = "click your answer, wrong answers will remove time from the timer.";
-         
-    //     a.textContent = questionSet[n].answers[0].text;
-       
-        
-    //      b.innerText = questionSet[n].answers[1].text;
-        
-    //     c.innerText = questionSet[n].answers[2].text;
-        
-    //     startButton.setAttribute('class', 'hidden');
 
-        
-    // }
 
 
     // function setWins () {
