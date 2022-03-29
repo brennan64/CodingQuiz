@@ -15,6 +15,21 @@ var gameOver = "false";
 var wins = 0;
 var losses = 0;
 var game = startButton.addEventListener("click", quizHandlerStart);
+var quizLeaderboard = [
+  {
+    initials: "bmh",
+    score: 50,
+  },
+  {
+    initials: "bmh",
+    score: 50,
+  },
+
+  {
+    initials: "bmh",
+    score: 50,
+  },
+];
 
 function quizHandlerStart() {
   var intID = setInterval(function () {
@@ -76,6 +91,7 @@ document.addEventListener("click", function (e) {
       n++;
       getQuestion();
     } else if (e.target.dataset.isCorrect === "true" && n == 4) {
+      score += 1;
       gameOver = "true";
       addEndBtn();
     } else {
@@ -99,14 +115,22 @@ resultButton.addEventListener("click", function (e) {
   e.preventDefault();
   var initialInput = document.getElementById("initials").value;
   // initialInput.setAttribute("class", "show");
+  // save to local storage
+  window.localStorage.setItem(
+    "quizLeaderboard",
+    JSON.stringify(quizLeaderboard)
+  );
 
-  console.log("working", initialInput);
+  // read from local storage
+  const savedScoreboard = window.localStorage.getItem("quizLeaderboard");
+
+  if (savedScoreboard) {
+    const scoreboard = JSON.parse(savedScoreboard);
+  }
   window.location.href = "./winnerScreen.html";
+
+  var score = timeLeft;
 });
-
-// function scoreboard () {
-
-// }
 
 // function setWins () {
 //     localStorage.setItem( );
