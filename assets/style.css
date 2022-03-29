@@ -27,13 +27,6 @@ main {
   border-radius: 0.5em;
   text-align: center;
 }
-.result-area {
-  display: flex;
-}
-
-.result-area form button {
-  border-radius: 1em;
-}
 
 #start-quiz {
   justify-content: center;

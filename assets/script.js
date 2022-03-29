@@ -94,9 +94,7 @@ function addEndBtn() {
   b.textContent = "";
   c.textContent = "";
   resultButton.classList.remove("hidden");
-  resultButton.addEventListener("click", function () {
-    console.log("hello");
-  });
+  resultButton.addEventListener("click", function () {});
 
   var initialInput = document.getElementById("initials");
 
