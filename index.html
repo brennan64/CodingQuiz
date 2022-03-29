@@ -1,40 +1,68 @@
 button<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>coding quiz</title>
-    <link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
     <main>
-        <!-- Heading Area -->
-        <div class="heading-area">
-          <h1>Coding Quiz Challenge</h1>
-          <p class="sub-heading-text">
-            Try to answer the following code-related questions within the time limit. Incorrect answers will subtract 5 seconds from the clock. You have
-            10 seconds for each question.
-          </p>
-          <div class="timer"></div>
-        </div>
-  
-        <!-- Button Area -->
-        
-        <div id="button-area">
-            <button  class="choice" id="a" data-is-true=" "   class="answers" ></button>
-            <button  class="choice" id="b" data-is-true= ""   class="answers" ></button>
-            <button class="choice"  id="c" data-is-true= ""  class="answers"></button>
-          <button id="start-quiz">Start Quiz</button>
-        </div>
-  
-        <!-- Result Area -->
-      <div class="result-area">
-<button class="hidden" id="result-btn">View High Scores</button>
-        </div>
-      </main>
-      <script type="text/javascript" src="assets/questionSet.js"></script>
-      <script type="text/javascript" src="assets/script.js"></script>
+      <!-- Heading Area -->
+      <div class="heading-area">
+        <h1>Coding Quiz Challenge</h1>
+        <p class="sub-heading-text">
+          Try to answer the following code-related questions within the time
+          limit. Incorrect answers will subtract 5 seconds from the clock. You
+          have 10 seconds for each question.
+        </p>
+        <div class="timer"></div>
+      </div>
 
-</body>
+      <!-- Button Area -->
+
+      <div id="button-area">
+        <button
+          class="choice"
+          id="a"
+          data-is-true=" "
+          href=""
+          class="answers"
+        ></button>
+        <button
+          class="choice"
+          id="b"
+          data-is-true=""
+          href=""
+          class="answers"
+        ></button>
+        <button
+          class="choice"
+          id="c"
+          data-is-true=""
+          href=""
+          class="answers"
+        ></button>
+        <button id="start-quiz">Start Quiz</button>
+      </div>
+
+      <!-- Result Area -->
+      <div class="result-area">
+        <form action="">
+          <input
+            type="text"
+            id="initialsInput"
+            placeholder="Enter Your Initials"
+            class="hidden"
+          />
+          <button class="hidden" onclick="winnerScreen.html" id="result-btn">
+            View High Scores
+          </button>
+        </form>
+      </div>
+    </main>
+    <script type="text/javascript" src="assets/questionSet.js"></script>
+    <script type="text/javascript" src="assets/script.js"></script>
+  </body>
 </html>
