@@ -84,6 +84,9 @@ document.addEventListener("click", function (e) {
       timeLeft -= 5;
     }
   }
+
+  if (score == 5) {
+  }
 });
 
 function addEndBtn() {
@@ -92,7 +95,7 @@ function addEndBtn() {
   c.textContent = "";
   resultButton.classList.remove("hidden");
   resultButton.addEventListener("click", function () {
-    console.log("view results screen");
+    console.log("hello");
   });
 
   var initialInput = document.getElementById("initials");

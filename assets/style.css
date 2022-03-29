@@ -29,12 +29,10 @@ main {
 }
 .result-area {
   display: flex;
-  justify-content: center;
 }
 
-.result-area button {
+.result-area form button {
   border-radius: 1em;
-  margin: auto;
 }
 
 #start-quiz {
@@ -49,13 +47,19 @@ main {
   padding-top: 1%;
 }
 
-.sub-heading-class {
-  font-size: 64%;
+.sub-heading-text {
+  font-size: 24pt;
   line-height: 1.2;
+  margin: 4%;
 }
 
 button {
   justify-content: space-between;
   margin-top: 4%;
   font-size: 40pt;
+  text-align: center;
+}
+
+input {
+  align-content: center;
 }
