@@ -46,13 +46,27 @@ main {
   margin: 4%;
 }
 
-button {
+.result-area {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#button-area button {
   justify-content: space-between;
   margin-top: 4%;
   font-size: 40pt;
-  text-align: center;
 }
 
-input {
-  align-content: center;
+.result-area form {
+  display: flex;
+
+  width: 30%;
 }
+
+/* .result-area input .show {
+  
+}
+
+.result-area button .show {
+  justify-content: flex-end;
+} */

@@ -33,8 +33,10 @@ function quizHandlerStart() {
       timerEl.textContent = "0";
       // Use `clearInterval()` to stop the timer
       clearInterval(intID);
+      losses++;
       gameOver = "true";
       console.log("times up");
+      addEndBtn();
     }
   }, 1000);
   getQuestion();
