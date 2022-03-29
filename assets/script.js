@@ -75,10 +75,6 @@ document.addEventListener("click", function (e) {
       score += 1;
       n++;
       getQuestion();
-      // if (score === 5 && e.target.dataset.isCorrect === "true"){
-      //     gameOver = "true"
-      //     addEndBtn();
-      // } else if
     } else if (e.target.dataset.isCorrect === "true" && n == 4) {
       gameOver = "true";
       addEndBtn();
@@ -95,13 +91,18 @@ function addEndBtn() {
   a.textContent = "";
   b.textContent = "";
   c.textContent = "";
-  resultButton.classList.remove("hidden");
-  resultButton.addEventListener("click", function () {});
-
   var initialInput = document.getElementById("initials");
-
   initialInput.setAttribute("class", "show");
+  resultButton.classList.remove("hidden");
 }
+resultButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  var initialInput = document.getElementById("initials").value;
+  // initialInput.setAttribute("class", "show");
+
+  console.log("working", initialInput);
+  window.location.href = "./winnerScreen.html";
+});
 
 // function scoreboard () {
 
