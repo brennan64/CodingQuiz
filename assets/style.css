@@ -63,6 +63,10 @@ main {
   width: 30%;
 }
 
+#scoreboard h1 {
+  text-align: center;
+}
+
 /* .result-area input .show {
   
 }

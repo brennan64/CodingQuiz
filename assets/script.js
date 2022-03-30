@@ -10,26 +10,13 @@ var startButton = document.querySelector("#start-quiz");
 var timeLeft = 50;
 var resultButton = document.getElementById("result-btn");
 var timerEl = document.querySelector(".timer");
+var choices = document.querySelectorAll(".choice");
 var score = 0;
+var scoreArea = document.getElementById("scoreboard");
 var gameOver = "false";
 var wins = 0;
 var losses = 0;
 var game = startButton.addEventListener("click", quizHandlerStart);
-var quizLeaderboard = [
-  {
-    initials: "bmh",
-    score: 50,
-  },
-  {
-    initials: "bmh",
-    score: 50,
-  },
-
-  {
-    initials: "bmh",
-    score: 50,
-  },
-];
 
 function quizHandlerStart() {
   var intID = setInterval(function () {
@@ -100,6 +87,10 @@ document.addEventListener("click", function (e) {
   }
 
   if (score == 5) {
+    gameOver = "true";
+    a.setAttribute("class", "hidden");
+    b.setAttribute("class", "hidden");
+    c.setAttribute("class", "hidden");
   }
 });
 
@@ -116,26 +107,42 @@ resultButton.addEventListener("click", function (e) {
   var initialInput = document.getElementById("initials").value;
   // initialInput.setAttribute("class", "show");
   // save to local storage
-  window.localStorage.setItem(
-    "quizLeaderboard",
-    JSON.stringify(quizLeaderboard)
-  );
+  // window.localStorage.setItem(
+  //   "quizLeaderboard",
+  //   JSON.stringify(quizLeaderboard)
+  // );
+
+  // // read from local storage
+  // const savedScoreboard = window.localStorage.getItem("quizLeaderboard");
+
+  // if (quizLeaderboard) {
+  //   const scoreboard = JSON.parse(savedScoreboard);
+  // }
+  window.location.href = "./winnerScreen.html";
+
+  const leaderboard = [
+    {
+      initials: "DL",
+      score: 5,
+    },
+    {
+      initials: "BH",
+      score: 4,
+    },
+    {
+      initials: "DL",
+      score: 3,
+    },
+  ];
+
+  // save to local storage
+  window.localStorage.setItem("quizLeaderboard", JSON.stringify(leaderboard));
 
   // read from local storage
   const savedScoreboard = window.localStorage.getItem("quizLeaderboard");
 
   if (savedScoreboard) {
     const scoreboard = JSON.parse(savedScoreboard);
+    scoreArea.innerHTML = scoreboard;
   }
-  window.location.href = "./winnerScreen.html";
-
-  var score = timeLeft;
 });
-
-// function setWins () {
-//     localStorage.setItem( );
-// }
-
-// function setLosses () {
-//     localStorage.setItem()
-// }
