@@ -2,9 +2,13 @@ main {
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: charcoal;
 }
 
 .hidden {
+  display: none;
+}
+form .hidden {
   display: none;
 }
 
@@ -16,7 +20,6 @@ main {
   display: flex;
   flex-direction: column;
   background-color: white;
-  border: 10% soild navy;
 
   border-radius: 1em;
   margin: 3%;
@@ -74,3 +77,13 @@ main {
 .result-area button .show {
   justify-content: flex-end;
 } */
+
+.correctAnswer :active {
+  border: 5px solid lime;
+  content: "✅";
+}
+
+form {
+  justify-content: space-between;
+  border-radius: 1em;
+}

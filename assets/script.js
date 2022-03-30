@@ -12,7 +12,7 @@ var resultButton = document.getElementById("result-btn");
 var timerEl = document.querySelector(".timer");
 var choices = document.querySelectorAll(".choice");
 var score = 0;
-var scoreArea = document.getElementById("scoreboard");
+
 var gameOver = "false";
 var wins = 0;
 var losses = 0;
@@ -95,9 +95,6 @@ document.addEventListener("click", function (e) {
 });
 
 function addEndBtn() {
-  a.textContent = "";
-  b.textContent = "";
-  c.textContent = "";
   var initialInput = document.getElementById("initials");
   initialInput.setAttribute("class", "show");
   resultButton.classList.remove("hidden");
@@ -105,20 +102,8 @@ function addEndBtn() {
 resultButton.addEventListener("click", function (e) {
   e.preventDefault();
   var initialInput = document.getElementById("initials").value;
-  // initialInput.setAttribute("class", "show");
-  // save to local storage
-  // window.localStorage.setItem(
-  //   "quizLeaderboard",
-  //   JSON.stringify(quizLeaderboard)
-  // );
-
-  // // read from local storage
-  // const savedScoreboard = window.localStorage.getItem("quizLeaderboard");
-
-  // if (quizLeaderboard) {
-  //   const scoreboard = JSON.parse(savedScoreboard);
-  // }
   window.location.href = "./winnerScreen.html";
+  var scoreArea = document.getElementById("scoreboard");
 
   const leaderboard = [
     {
@@ -126,7 +111,7 @@ resultButton.addEventListener("click", function (e) {
       score: 5,
     },
     {
-      initials: "BH",
+      initials: "bmh",
       score: 4,
     },
     {
@@ -139,10 +124,4 @@ resultButton.addEventListener("click", function (e) {
   window.localStorage.setItem("quizLeaderboard", JSON.stringify(leaderboard));
 
   // read from local storage
-  const savedScoreboard = window.localStorage.getItem("quizLeaderboard");
-
-  if (savedScoreboard) {
-    const scoreboard = JSON.parse(savedScoreboard);
-    scoreArea.innerHTML = scoreboard;
-  }
 });
